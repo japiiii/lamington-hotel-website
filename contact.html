@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <title>Contact · Lamington Hotel</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="index.html" class="logo-link">
+      <img src="images/LamingtonLogo-light.png" alt="Lamington Hotel — Popondetta, Oro">
+    </a>
+  </div>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="restaurant.html">Paia's Restaurant</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="reservation.html">Reservation</a></li>
+    </ul>
+  </nav>
+  <a href="reservation.html" class="book-now">Book Now</a>
+</header>
+
+<section class="page-hero">
+  <p class="eyebrow centered">Get in touch</p>
+  <h1>Contact Us</h1>
+  <p>Our front desk is available around the clock for reservations, group bookings, conference enquiries, and anything about your stay.</p>
+</section>
+
+<section class="section on-paper">
+  <div class="section-inner contact-layout">
+
+    <div class="contact-left">
+      <div class="info-box">
+        <h3>Address</h3>
+        <p>P.O. Box 27, Popondetta<br>Oro Province, Papua New Guinea</p>
+      </div>
+      <div class="info-box">
+        <h3>Phone</h3>
+        <p><a href="tel:+639812588405">(+63) 981 258 8405</a></p>
+      </div>
+      <div class="info-box">
+        <h3>Email</h3>
+        <p><a href="mailto:Lamington@gmail.com">Lamington@gmail.com</a></p>
+      </div>
+      <div class="info-box">
+        <h3>Front desk</h3>
+        <p>Open 24 hours, every day of the year.</p>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="form-group">
+        <label for="contactName">Name</label>
+        <input type="text" id="contactName" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label for="contactEmail">Email address</label>
+        <input type="email" id="contactEmail" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="contactMessage">Message</label>
+        <textarea id="contactMessage" placeholder="How can we help you?" required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send message</button>
+      <p class="form-note" id="contactNote"></p>
+    </form>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="images/LamingtonLogo-light.png" alt="Lamington Hotel — Popondetta, Oro">
+    <div class="footer-meta">
+      P.O. Box 27, Popondetta, Oro Province, Papua New Guinea<br>
+      <a href="mailto:Lamington@gmail.com">Lamington@gmail.com</a> · Operated by Comfort Inn Limited
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 Lamington Hotel · All rights reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

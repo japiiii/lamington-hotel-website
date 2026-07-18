@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <title>Paia's Restaurant · Lamington Hotel</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="restaurant.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="index.html" class="logo-link">
+      <img src="images/LamingtonLogo-light.png" alt="Lamington Hotel — Popondetta, Oro">
+    </a>
+  </div>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="restaurant.html" class="active">Paia's Restaurant</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="reservation.html">Reservation</a></li>
+    </ul>
+  </nav>
+  <a href="reservation.html" class="book-now">Book Now</a>
+</header>
+
+<section class="page-hero">
+  <p class="eyebrow centered">Dining at the Lamington</p>
+  <h1>Paia's Restaurant</h1>
+  <p>Local and international cuisine served daily — breakfast, soups, sandwiches, pizzas, grills and the classics. Browse the menu below, or hover the cover for the QR code.</p>
+</section>
+
+<section class="section on-paper">
+  <div class="section-inner">
+    <div class="menu-cover">
+      <img src="images/1.png" alt="Paia's Restaurant menu cover — hover to reveal QR code"
+           onmouseover="this.src='images/qr.jpg'"
+           onmouseout="this.src='images/1.png'">
+      <p class="menu-hint">Hover (or tap) the cover to scan our digital menu</p>
+    </div>
+
+    <div class="menu-gallery">
+      <figure class="menu-card"><img src="images/2.png" alt="Breakfast menu" loading="lazy"><figcaption>Breakfast</figcaption></figure>
+      <figure class="menu-card"><img src="images/3.png" alt="Soup menu" loading="lazy"><figcaption>Soups</figcaption></figure>
+      <figure class="menu-card"><img src="images/4.png" alt="Sandwich menu" loading="lazy"><figcaption>Sandwiches</figcaption></figure>
+      <figure class="menu-card"><img src="images/5.png" alt="Pizza menu" loading="lazy"><figcaption>Pizzas</figcaption></figure>
+      <figure class="menu-card"><img src="images/6.png" alt="Grill menu" loading="lazy"><figcaption>Grill</figcaption></figure>
+      <figure class="menu-card"><img src="images/7.png" alt="Classics menu" loading="lazy"><figcaption>Classics</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="images/LamingtonLogo-light.png" alt="Lamington Hotel — Popondetta, Oro">
+    <div class="footer-meta">
+      P.O. Box 27, Popondetta, Oro Province, Papua New Guinea<br>
+      <a href="mailto:Lamington@gmail.com">Lamington@gmail.com</a> · Operated by Comfort Inn Limited
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 Lamington Hotel · All rights reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

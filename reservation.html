@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <title>Reservation · Lamington Hotel</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="index.html" class="logo-link">
+      <img src="images/LamingtonLogo-light.png" alt="Lamington Hotel — Popondetta, Oro">
+    </a>
+  </div>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="restaurant.html">Paia's Restaurant</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="reservation.html" class="active">Reservation</a></li>
+    </ul>
+  </nav>
+  <a href="reservation.html" class="book-now">Book Now</a>
+</header>
+
+<section class="page-hero">
+  <p class="eyebrow centered">Plan your stay</p>
+  <h1>Make a Reservation</h1>
+  <p>Book directly with us for our best available rate. Send a request below and our front desk will confirm your room by email or phone.</p>
+</section>
+
+<section class="section on-paper">
+  <div class="section-inner reservation-layout">
+
+    <form class="reservation-form" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="guestName">Full name</label>
+          <input type="text" id="guestName" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="reservationEmail">Email address</label>
+          <input type="email" id="reservationEmail" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="checkIn">Check in</label>
+          <input type="date" id="checkIn" required>
+        </div>
+        <div class="form-group">
+          <label for="checkOut">Check out</label>
+          <input type="date" id="checkOut" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="roomType">Room type</label>
+          <select id="roomType">
+            <option value="Standard Twin Share (K352/night)">Standard Twin Share · K352 / night</option>
+            <option value="Deluxe Queen Twin (K385/night)">Deluxe Queen Twin · K385 / night</option>
+            <option value="Standard Suite (K495/night)">Standard Suite · K495 / night</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="guestCount">Guests</label>
+          <select id="guestCount">
+            <option>1 guest</option>
+            <option>2 guests</option>
+            <option>3 guests</option>
+            <option>4 guests</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="form-submit">Send booking request</button>
+      <p class="form-note" id="reservationNote"></p>
+    </form>
+
+    <aside class="reservation-aside">
+      <h3>Good to know</h3>
+      <ul>
+        <li>All rates are in PNG Kina and include 10% GST.</li>
+        <li>Advance deposits are welcome and credited to your stay.</li>
+        <li>Group and conference bookings — <a href="contact.html">contact us directly</a>.</li>
+        <li>Need help? Email <a href="mailto:Lamington@gmail.com">Lamington@gmail.com</a>.</li>
+      </ul>
+    </aside>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="images/LamingtonLogo-light.png" alt="Lamington Hotel — Popondetta, Oro">
+    <div class="footer-meta">
+      P.O. Box 27, Popondetta, Oro Province, Papua New Guinea<br>
+      <a href="mailto:Lamington@gmail.com">Lamington@gmail.com</a> · Operated by Comfort Inn Limited
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 Lamington Hotel · All rights reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+/* Paia's Restaurant page */
+
+.menu-cover {
+  max-width: 460px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+.menu-cover img {
+  width: 100%;
+  border: 1px solid var(--paper-deep);
+  box-shadow: 0 18px 40px rgba(28, 36, 31, 0.18);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.menu-cover img:hover { transform: translateY(-4px); }
+.menu-hint {
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.menu-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.6rem;
+}
+.menu-card {
+  margin: 0;
+  background: #FBF8F0;
+  border: 1px solid var(--paper-deep);
+  padding: 0.9rem;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 34px rgba(28, 36, 31, 0.14);
+}
+.menu-card img { width: 100%; }
+.menu-card figcaption {
+  padding: 0.9rem 0.2rem 0.3rem;
+  font-family: var(--display);
+  font-size: 1.05rem;
+  color: var(--ink);
+  text-align: center;
+}
