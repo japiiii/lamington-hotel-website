@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\wamp64\\www\\lamington-hotel-website\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\lamington-hotel-website\\contact.html||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:contact.html||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\lamington-hotel-website\\restaurant.html||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:restaurant.html||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -21,6 +17,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\lamington-hotel-website\\reservation.css||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:reservation.css||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\lamington-hotel-website\\contact.html||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:contact.html||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +30,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "restaurant.html",
               "DocumentMoniker": "C:\\wamp64\\www\\lamington-hotel-website\\restaurant.html",
               "RelativeDocumentMoniker": "restaurant.html",
@@ -47,7 +47,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "index.html",
               "DocumentMoniker": "C:\\wamp64\\www\\lamington-hotel-website\\index.html",
               "RelativeDocumentMoniker": "index.html",
@@ -55,11 +55,12 @@
               "RelativeToolTip": "index.html",
               "ViewState": "AgIAAPUAAAAAAAAAAAAAAAsBAABgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2026-07-20T05:55:06.082Z"
+              "WhenOpened": "2026-07-20T05:55:06.082Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "reservation.css",
               "DocumentMoniker": "C:\\wamp64\\www\\lamington-hotel-website\\reservation.css",
               "RelativeDocumentMoniker": "reservation.css",
@@ -67,24 +68,25 @@
               "RelativeToolTip": "reservation.css",
               "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-07-20T05:54:48.151Z"
+              "WhenOpened": "2026-07-20T05:54:48.151Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "contact.html",
               "DocumentMoniker": "C:\\wamp64\\www\\lamington-hotel-website\\contact.html",
               "RelativeDocumentMoniker": "contact.html",
               "ToolTip": "C:\\wamp64\\www\\lamington-hotel-website\\contact.html",
               "RelativeToolTip": "contact.html",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADYAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFoAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2026-07-20T05:53:58.366Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "reservation.html",
               "DocumentMoniker": "C:\\wamp64\\www\\lamington-hotel-website\\reservation.html",
               "RelativeDocumentMoniker": "reservation.html",
@@ -92,7 +94,8 @@
               "RelativeToolTip": "reservation.html",
               "ViewState": "AgIAAEsAAAAAAAAAAAAAAGcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2026-07-20T05:10:11.978Z"
+              "WhenOpened": "2026-07-20T05:10:11.978Z",
+              "EditorCaption": ""
             }
           ]
         }
