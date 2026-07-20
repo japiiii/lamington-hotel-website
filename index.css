@@ -615,3 +615,13 @@ a:focus-visible, button:focus-visible {
   .stay-calc-result { text-align: left; }
   .stay-calc-controls { grid-template-columns: 1fr; }
 }
+
+/* Five-across amenities row */
+.amenities-grid.cols-5 { grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+.amenities-grid.cols-5 .amenity-card { padding: 1.6rem 1.3rem; }
+.amenities-grid.cols-5 .amenity-glyph { width: 36px; height: 36px; margin-bottom: 1rem; }
+.amenities-grid.cols-5 .amenity-card h3 { font-size: 1.08rem; }
+.amenities-grid.cols-5 .amenity-card p { font-size: 0.88rem; }
+@media (max-width: 1100px) {
+  .amenities-grid.cols-5 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+}
