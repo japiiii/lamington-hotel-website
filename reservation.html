@@ -37,31 +37,32 @@
 <section class="section on-paper">
   <div class="section-inner reservation-layout">
 
-    <form class="reservation-form" novalidate>
+    <form class="reservation-form" action="mail-handler.php" method="POST" novalidate>
+      <input type="hidden" name="form_type" value="reservation">
       <div class="form-row">
         <div class="form-group">
           <label for="guestName">Full name</label>
-          <input type="text" id="guestName" placeholder="Your name" required>
+          <input type="text" id="guestName" name="name" placeholder="Your name" required>
         </div>
         <div class="form-group">
           <label for="reservationEmail">Email address</label>
-          <input type="email" id="reservationEmail" placeholder="your@email.com" required>
+          <input type="email" id="reservationEmail" name="email" placeholder="your@email.com" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label for="checkIn">Check in</label>
-          <input type="date" id="checkIn" required>
+          <input type="date" id="checkIn" name="checkIn" required>
         </div>
         <div class="form-group">
           <label for="checkOut">Check out</label>
-          <input type="date" id="checkOut" required>
+          <input type="date" id="checkOut" name="checkOut" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label for="roomType">Room type</label>
-          <select id="roomType">
+          <select id="roomType" name="roomType">
             <option value="Standard Twin Share (K352/night)">Standard Twin Share · K352 / night</option>
             <option value="Deluxe Queen Twin (K385/night)">Deluxe Queen Twin · K385 / night</option>
             <option value="Standard Suite (K495/night)">Standard Suite · K495 / night</option>
@@ -69,7 +70,7 @@
         </div>
         <div class="form-group">
           <label for="guestCount">Guests</label>
-          <select id="guestCount">
+          <select id="guestCount" name="guests">
             <option>1 guest</option>
             <option>2 guests</option>
             <option>3 guests</option>
@@ -87,7 +88,7 @@
         <li>All rates are in PNG Kina and include 10% GST.</li>
         <li>Advance deposits are welcome and credited to your stay.</li>
         <li>Group and conference bookings — <a href="contact.html">contact us directly</a>.</li>
-        <li>Need help? Email <a href="mailto:reservations@lamington.com.pg">reservations@lamington.com.pg</a>.</li>
+        <li>Need help? Email <a href="mailto:reservations@lamingtonhotel.com.pg">reservations@lamingtonhotel.com.pg</a>.</li>
       </ul>
     </aside>
 

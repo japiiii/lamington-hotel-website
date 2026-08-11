@@ -34,30 +34,35 @@ if (checkIn && checkOut && reservationForm) {
 
     const name = document.getElementById('guestName').value.trim();
     const email = document.getElementById('reservationEmail').value.trim();
-    const roomType = document.getElementById('roomType').value;
-    const guests = document.getElementById('guestCount').value;
 
     if (!name || !email || !checkIn.value || !checkOut.value) {
       showNote(reservationNote, 'Please fill in your name, email, and both dates to send a request.');
       return;
     }
 
-    const subject = encodeURIComponent('Booking request — ' + name);
-    const body = encodeURIComponent(
-      'Name: ' + name + '\n' +
-      'Email: ' + email + '\n' +
-      'Room type: ' + roomType + '\n' +
-      'Check in: ' + checkIn.value + '\n' +
-      'Check out: ' + checkOut.value + '\n' +
-      'Guests: ' + guests
-    );
+    const submitBtn = reservationForm.querySelector('.form-submit');
+    submitBtn.disabled = true;
+    showNote(reservationNote, 'Sending your request…');
 
-    window.location.href = 'mailto:Lamington@gmail.com?subject=' + subject + '&body=' + body;
-    showNote(reservationNote,
-      'Thanks, ' + name.split(' ')[0] + ' — your email app should open with the request ready to send. ' +
-      'Our front desk will confirm your booking by reply.');
-    reservationForm.reset();
-    checkOut.min = today;
+    fetch(reservationForm.action, { method: 'POST', body: new FormData(reservationForm) })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          showNote(reservationNote,
+            'Thanks, ' + name.split(' ')[0] + ' — your booking request has been sent. ' +
+            'Our front desk will confirm your booking by reply.');
+          reservationForm.reset();
+          checkOut.min = today;
+        } else {
+          showNote(reservationNote, data.message || 'Something went wrong — please email us directly at reservations@lamingtonhotel.com.pg.');
+        }
+      })
+      .catch(() => {
+        showNote(reservationNote, 'Something went wrong — please email us directly at reservations@lamingtonhotel.com.pg.');
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+      });
   });
 }
 
@@ -78,12 +83,26 @@ if (contactForm) {
       return;
     }
 
-    const subject = encodeURIComponent('Website enquiry — ' + name);
-    const body = encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message);
+    const submitBtn = contactForm.querySelector('.form-submit');
+    submitBtn.disabled = true;
+    showNote(contactNote, 'Sending your message…');
 
-    window.location.href = 'mailto:Lamington@gmail.com?subject=' + subject + '&body=' + body;
-    showNote(contactNote, 'Thanks — your email app should open with the message ready to send.');
-    contactForm.reset();
+    fetch(contactForm.action, { method: 'POST', body: new FormData(contactForm) })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          showNote(contactNote, 'Thanks — your message has been sent. Our front desk will get back to you soon.');
+          contactForm.reset();
+        } else {
+          showNote(contactNote, data.message || 'Something went wrong — please email us directly at reservations@lamingtonhotel.com.pg.');
+        }
+      })
+      .catch(() => {
+        showNote(contactNote, 'Something went wrong — please email us directly at reservations@lamingtonhotel.com.pg.');
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+      });
   });
 }
 

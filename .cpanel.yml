@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/lamingtonhotelpg/public_html/
+    - /bin/cp -R images $DEPLOYPATH
+    - /bin/cp *.html *.css *.js *.php $DEPLOYPATH

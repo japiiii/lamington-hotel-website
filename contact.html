@@ -44,7 +44,7 @@
       </div>
       <div class="info-box">
         <h3>Phone</h3>
-        <p><a href="tel:+639812588405">(+63) 981 258 8405</a></p>
+        <p><a href="tel:+6756297222">(675) 629 7222</a> / <a href="tel:+6756297223">629 7223</a></p>
       </div>
       <div class="info-box">
         <h3>Email</h3>
@@ -56,18 +56,19 @@
       </div>
     </div>
 
-    <form class="contact-form" id="contactForm" novalidate>
+    <form class="contact-form" id="contactForm" action="mail-handler.php" method="POST" novalidate>
+      <input type="hidden" name="form_type" value="contact">
       <div class="form-group">
         <label for="contactName">Name</label>
-        <input type="text" id="contactName" placeholder="Your name" required>
+        <input type="text" id="contactName" name="name" placeholder="Your name" required>
       </div>
       <div class="form-group">
         <label for="contactEmail">Email address</label>
-        <input type="email" id="contactEmail" placeholder="your@email.com" required>
+        <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required>
       </div>
       <div class="form-group">
         <label for="contactMessage">Message</label>
-        <textarea id="contactMessage" placeholder="How can we help you?" required></textarea>
+        <textarea id="contactMessage" name="message" placeholder="How can we help you?" required></textarea>
       </div>
       <button type="submit" class="form-submit">Send message</button>
       <p class="form-note" id="contactNote"></p>
@@ -81,7 +82,7 @@
     <img src="images/LamingtonLogo-light.png" alt="Lamington Hotel — Popondetta, Oro">
     <div class="footer-meta">
       P.O. Box 27, Popondetta, Oro Province, Papua New Guinea<br>
-      <a href="mailto:reservations@lamington.com.pg">reservations@lamingtonhotel.com.pg</a>
+      <a href="mailto:reservations@lamingtonhotel.com.pg">reservations@lamingtonhotel.com.pg</a>
     </div>
   </div>
   <p class="footer-copy">© 2026 Lamington Hotel · All rights reserved</p>
