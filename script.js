@@ -1,5 +1,19 @@
 /* Lamington Hotel — shared script */
 
+/* Page-view tracking */
+document.addEventListener('DOMContentLoaded', function () {
+  if (navigator.sendBeacon) {
+    try {
+      navigator.sendBeacon('/track.php', JSON.stringify({
+        path: location.pathname,
+        referrer: document.referrer,
+      }));
+    } catch (e) {
+      // Tracking must never break the page.
+    }
+  }
+});
+
 /* Mobile navigation */
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.navbar nav');
