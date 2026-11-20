@@ -6,7 +6,7 @@
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <title>Paia's Restaurant · Lamington Hotel</title>
   <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="restaurant.css">
+  <link rel="stylesheet" href="restaurant.css?v=20261120">
   <link rel="stylesheet" href="christmas.css">
 </head>
 <body>
@@ -32,26 +32,74 @@
 <section class="page-hero">
   <p class="eyebrow centered">Dining at the Lamington</p>
   <h1>Paia's Restaurant</h1>
-  <p>Local and international cuisine served daily — breakfast, soups, sandwiches, pizzas, grills and the classics. Browse the menu below, or hover the cover for the QR code.</p>
+  <p>Local and international cuisine, served every day from 6:00&nbsp;AM to 9:30&nbsp;PM — dine in or take away. Browse the all-day menu, the café, and our combo, group and buffet menus below.</p>
 </section>
 
 <section class="section on-paper">
   <div class="section-inner">
-    <div class="menu-cover">
-      <img src="images/1.png" alt="Paia's Restaurant menu cover — hover to reveal QR code"
-           onmouseover="this.src='images/qr.jpg'"
-           onmouseout="this.src='images/1.png'">
-      <p class="menu-hint">Hover (or tap) the cover to scan our digital menu</p>
-    </div>
+
+    <figure class="menu-card menu-card-wide">
+      <a class="menu-open" href="images/menu/all-day-menu.jpg">
+        <img src="images/menu/all-day-menu-1200.jpg"
+             srcset="images/menu/all-day-menu-1200.jpg 1200w, images/menu/all-day-menu.jpg 2000w"
+             sizes="(min-width: 1218px) 1090px, calc(92vw - 30px)"
+             width="1200" height="848"
+             alt="All-day menu: breakfast, soups, sandwiches, starters, the grill, pizzas, classics and beverages, with prices in kina">
+      </a>
+      <figcaption>
+        <span class="menu-name">All-day menu</span>
+        <span class="menu-note">Breakfast through dinner · dine in or take away</span>
+      </figcaption>
+    </figure>
+
+    <p class="eyebrow centered menu-subhead">Café, combos &amp; functions</p>
 
     <div class="menu-gallery">
-      <figure class="menu-card"><img src="images/2.png" alt="Breakfast menu" loading="lazy"><figcaption>Breakfast</figcaption></figure>
-      <figure class="menu-card"><img src="images/3.png" alt="Soup menu" loading="lazy"><figcaption>Soups</figcaption></figure>
-      <figure class="menu-card"><img src="images/4.png" alt="Sandwich menu" loading="lazy"><figcaption>Sandwiches</figcaption></figure>
-      <figure class="menu-card"><img src="images/5.png" alt="Pizza menu" loading="lazy"><figcaption>Pizzas</figcaption></figure>
-      <figure class="menu-card"><img src="images/6.png" alt="Grill menu" loading="lazy"><figcaption>Grill</figcaption></figure>
-      <figure class="menu-card"><img src="images/7.png" alt="Classics menu" loading="lazy"><figcaption>Classics</figcaption></figure>
+      <figure class="menu-card">
+        <a class="menu-open" href="images/menu/cafe-menu.jpg">
+          <img src="images/menu/cafe-menu-700.jpg" width="700" height="990" loading="lazy"
+               alt="Café menu: specialty drinks, hot drinks, iced coffees and frappés, and fresh flavoured drinks, with prices in kina">
+        </a>
+        <figcaption>
+          <span class="menu-name">Café</span>
+          <span class="menu-note">Coffee, frappés &amp; coolers</span>
+        </figcaption>
+      </figure>
+      <figure class="menu-card">
+        <a class="menu-open" href="images/menu/combo-meals.jpg">
+          <img src="images/menu/combo-meals-700.jpg" width="700" height="990" loading="lazy"
+               alt="Combo meals, all your favourites at one price: Combo Meal A K60, Combo Meal B K70, Combo Meal C K80">
+        </a>
+        <figcaption>
+          <span class="menu-name">Combo meals</span>
+          <span class="menu-note">Set plates from K60</span>
+        </figcaption>
+      </figure>
+      <figure class="menu-card">
+        <a class="menu-open" href="images/menu/group-meals.jpg">
+          <img src="images/menu/group-meals-700.jpg" width="700" height="990" loading="lazy"
+               alt="Group meals for sharing — fried chicken, a medium Hawaiian pizza, sides and a pitcher of iced tea: Group Meal A K140, Group Meal B K160, Group Meal C K180">
+        </a>
+        <figcaption>
+          <span class="menu-name">Group meals</span>
+          <span class="menu-note">Made for sharing, from K140</span>
+        </figcaption>
+      </figure>
+      <figure class="menu-card">
+        <a class="menu-open" href="images/menu/buffet-events-menu.jpg">
+          <img src="images/menu/buffet-events-menu-700.jpg" width="700" height="990" loading="lazy"
+               alt="Buffet and events menu: appetisers, main dishes, rice and drinks by the tray, each tray serving 20 to 25 people, with prices in kina">
+        </a>
+        <figcaption>
+          <span class="menu-name">Buffet &amp; events</span>
+          <span class="menu-note">Trays for 20–25 guests</span>
+        </figcaption>
+      </figure>
     </div>
+
+    <p class="menu-terms"><strong>Planning a function?</strong> Each buffet tray serves 20–25 guests. Book at least 5 days before the event with a 50% deposit; cancellations 3 days before the event carry a 30% fee. <a href="contact.html">Talk to our front desk</a>.</p>
+
+    <p class="menu-hint">Tap or click any menu to open it full size</p>
   </div>
 </section>
 
