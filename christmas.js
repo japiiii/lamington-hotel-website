@@ -35,7 +35,7 @@
 
     hero: {
       title: 'Christmas beneath <em>Mount Lamington</em>',
-      text: 'Travelling home for the festive season? Eighteen comfortable rooms, honest hospitality, and Paia’s Restaurant — your home in the heart of Popondetta town.',
+      text: 'Travelling home for the festive season? Sixteen comfortable rooms, honest hospitality, and Paia’s Restaurant — your home in the heart of Popondetta town.',
     },
 
     bell: {
