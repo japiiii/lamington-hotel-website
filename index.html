@@ -6,7 +6,7 @@
   <meta name="description" content="Lamington Hotel — comfortable rooms, Paia's Restaurant, and conference facilities in Popondetta, Oro Province, Papua New Guinea.">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <title>Lamington Hotel · Popondetta, Papua New Guinea</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="index.css?v=20261121">
   <link rel="stylesheet" href="christmas.css">
 </head>
 <body>
@@ -21,6 +21,7 @@
   <nav>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
       <li><a href="restaurant.html">Paia's Restaurant</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="reservation.html">Reservation</a></li>
@@ -142,7 +143,7 @@
           <p class="room-code">STW</p>
           <h3>Standard Twin Share</h3>
           <p>Two comfortable single beds with a workspace and television — a practical choice for colleagues and friends.</p>
-          <a href="reservation.html" class="room-link">Book this room</a>
+          <a href="reservation.html?room=stw" class="room-link">Book this room</a>
         </div>
       </article>
       <article class="room-card">
@@ -154,7 +155,7 @@
           <p class="room-code">DQT</p>
           <h3>Deluxe Queen Twin</h3>
           <p>A queen bed and a single in a bright, airy room with garden surroundings — room for a small family.</p>
-          <a href="reservation.html" class="room-link">Book this room</a>
+          <a href="reservation.html?room=dqt" class="room-link">Book this room</a>
         </div>
       </article>
       <article class="room-card">
@@ -166,22 +167,23 @@
           <p class="room-code">SSU</p>
           <h3>Standard Suite</h3>
           <p>Our most spacious rooms, with extra living space and a relaxed atmosphere for longer stays.</p>
-          <a href="reservation.html" class="room-link">Book this room</a>
+          <a href="reservation.html?room=ssu" class="room-link">Book this room</a>
         </div>
       </article>
       <article class="room-card">
         <div class="room-media">
-          <img src="images/tables.jpg" alt="Conference room set for a function" loading="lazy">
-          <span class="rate-plate">K600 <small>/ day</small></span>
+          <img src="images/vip-suite/lounge-800.jpg" alt="VIP Suite lounge with television, dining table and sofa" loading="lazy">
+          <span class="rate-plate">On request</span>
         </div>
         <div class="room-body">
-          <p class="room-code">Conference</p>
-          <h3>Conference Room</h3>
-          <p>Seats up to 150 guests with optional catering packages from Paia's Restaurant.</p>
-          <a href="contact.html" class="room-link">Enquire now</a>
+          <p class="room-code">VIP</p>
+          <h3>VIP Suite</h3>
+          <p>A private bedroom, a separate lounge and dining area, and a kitchenette — a suite of its own.</p>
+          <a href="rooms.html#vip-suite" class="room-link">See the suite</a>
         </div>
       </article>
     </div>
+    <p class="rooms-more"><a href="rooms.html" class="room-link">See every room, with photos</a></p>
 
     <div class="stay-calc reveal">
       <div class="stay-calc-head">
@@ -250,6 +252,15 @@
 </section>
 
 <section class="section on-paper" style="padding-top:0;">
+  <div class="dine-band flip">
+    <div class="dine-copy">
+      <p class="eyebrow">Meetings &amp; functions</p>
+      <h2>Conference Room</h2>
+      <p>Seats up to 150 guests, with optional catering packages from Paia's Restaurant — a ready venue for workshops, trainings and functions. K600 per day.</p>
+      <a href="rooms.html#conference-room" class="primary-btn">See the room</a>
+    </div>
+    <img src="images/conference/overview-800.jpg" alt="Conference room set with rows of clothed tables and chairs facing a screen and the Welcome to Oro mural" loading="lazy">
+  </div>
   <div class="dine-band">
     <img src="images/1.png" alt="Paia's Restaurant menu cover" loading="lazy">
     <div class="dine-copy">
@@ -272,7 +283,7 @@
   <p class="footer-copy">© 2026 Lamington Hotel · All rights reserved</p>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=20261121"></script>
 <script src="christmas.js?v=20261121"></script>
 </body>
 </html>

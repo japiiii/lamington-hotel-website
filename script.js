@@ -36,6 +36,12 @@ if (checkIn && checkOut && reservationForm) {
   checkIn.min = today;
   checkOut.min = today;
 
+  /* Arriving from a "Book this room" link, e.g. reservation.html?room=vip */
+  const roomType = document.getElementById('roomType');
+  const wantedRoom = (new URLSearchParams(location.search).get('room') || '').replace(/[^a-z]/g, '');
+  const wantedOption = roomType && wantedRoom && roomType.querySelector('option[data-room="' + wantedRoom + '"]');
+  if (wantedOption) roomType.value = wantedOption.value;
+
   checkIn.addEventListener('change', () => {
     checkOut.min = checkIn.value;
     if (checkOut.value && checkOut.value < checkIn.value) {
@@ -134,7 +140,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 
 /* Scroll reveals — auto-tag cards and section heads */
 document.querySelectorAll(
-  '.amenity-card, .room-card, .menu-card, .info-box, .section-head, .dine-band, .reservation-form, .contact-form, .reservation-aside'
+  '.amenity-card, .room-card, .room-feature, .menu-card, .info-box, .section-head, .dine-band, .reservation-form, .contact-form, .reservation-aside'
 ).forEach(el => el.classList.add('reveal'));
 
 if (prefersReducedMotion) {
@@ -203,6 +209,79 @@ if (heroEl && !prefersReducedMotion) {
     }
   }, { passive: true });
 }
+
+/* Photo galleries — swipe, use the arrows, or pick a thumbnail */
+document.querySelectorAll('[data-gallery]').forEach((gallery) => {
+  const track = gallery.querySelector('.gallery-track');
+  const slides = Array.from(gallery.querySelectorAll('.gallery-slide'));
+  const thumbStrip = gallery.querySelector('.gallery-thumbs');
+  const thumbs = Array.from(gallery.querySelectorAll('.gallery-thumb'));
+  const prev = gallery.querySelector('.gallery-nav.prev');
+  const next = gallery.querySelector('.gallery-nav.next');
+  const count = gallery.querySelector('.gallery-count');
+  let current = 0;
+
+  function show(index) {
+    const target = Math.max(0, Math.min(slides.length - 1, index));
+    track.scrollTo({ left: target * track.clientWidth, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+  }
+
+  /* Reflect whichever photo is in view */
+  function mark(index) {
+    current = index;
+    thumbs.forEach((thumb, i) => {
+      thumb.classList.toggle('is-active', i === index);
+      if (i === index) thumb.setAttribute('aria-current', 'true');
+      else thumb.removeAttribute('aria-current');
+    });
+    if (count) count.textContent = (index + 1) + ' / ' + slides.length;
+    /* aria-disabled (not disabled) so the button keeps keyboard focus at either end */
+    if (prev) prev.setAttribute('aria-disabled', index === 0 ? 'true' : 'false');
+    if (next) next.setAttribute('aria-disabled', index === slides.length - 1 ? 'true' : 'false');
+
+    /* keep the active thumbnail in view without moving the page */
+    const thumb = thumbs[index];
+    if (thumb && thumbStrip) {
+      const left = thumb.offsetLeft;      /* the strip is the thumbnail's offset parent */
+      if (left < thumbStrip.scrollLeft) thumbStrip.scrollLeft = left;
+      else if (left + thumb.offsetWidth > thumbStrip.scrollLeft + thumbStrip.clientWidth) {
+        thumbStrip.scrollLeft = left + thumb.offsetWidth - thumbStrip.clientWidth;
+      }
+    }
+
+    /* fetch the neighbouring photos now, so the next swipe is instant */
+    [index - 1, index + 1].forEach((i) => {
+      const img = slides[i] && slides[i].querySelector('img');
+      if (img) img.loading = 'eager';
+    });
+  }
+
+  track.addEventListener('scroll', () => {
+    const index = Math.round(track.scrollLeft / track.clientWidth);
+    if (index !== current && slides[index]) mark(index);
+  }, { passive: true });
+
+  if (prev) prev.addEventListener('click', () => show(current - 1));
+  if (next) next.addEventListener('click', () => show(current + 1));
+  thumbs.forEach((thumb, i) => thumb.addEventListener('click', () => show(i)));
+
+  gallery.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') show(current - 1);
+    if (event.key === 'ArrowRight') show(current + 1);
+  });
+
+  /* Only start fetching neighbours once the gallery is actually on screen */
+  if ('IntersectionObserver' in window) {
+    const onScreen = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        mark(current);
+        onScreen.disconnect();
+      }
+    });
+    onScreen.observe(gallery);
+  }
+  if (prev) prev.setAttribute('aria-disabled', 'true');
+});
 
 /* Stay calculator */
 const calcRoom = document.getElementById('calcRoom');

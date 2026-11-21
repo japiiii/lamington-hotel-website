@@ -323,6 +323,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.12; }
 }
 .room-link::after { content: '→'; transition: transform 0.25s; }
 .room-link:hover::after { transform: translateX(4px); }
+.rooms-more { margin-top: 2.2rem; text-align: center; }
+.rooms-more .room-link { margin-top: 0; }
 
 /* ---------- Dining band (home) ---------- */
 .dine-band {
@@ -340,6 +342,9 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.12; }
 .dine-copy p { color: var(--ink-soft); margin-bottom: 1.8rem; }
 .dine-copy .primary-btn { align-self: flex-start; background: var(--forest-700); border-color: var(--forest-700); color: var(--paper); }
 .dine-copy .primary-btn:hover { background: var(--forest-900); }
+/* The same band, mirrored: copy on the left, photo on the right (conference room) */
+.dine-band.flip { grid-template-columns: 1fr 1.1fr; }
+.dine-band + .dine-band { margin-top: 1.6rem; }
 
 /* ---------- Footer ---------- */
 .footer {
@@ -456,6 +461,11 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ---------- Responsive ---------- */
+/* Five nav links need a little squeezing on small laptops and landscape tablets */
+@media (min-width: 861px) and (max-width: 960px) {
+  .nav-links { gap: 1.4rem; }
+  .nav-links a { letter-spacing: 0.13em; }
+}
 @media (max-width: 860px) {
   .nav-toggle { display: block; }
   .navbar { flex-wrap: wrap; }
@@ -474,7 +484,8 @@ a:focus-visible, button:focus-visible {
   }
   .nav-links a { display: block; padding: 0.7rem 0; border-bottom: none; }
   .book-now { margin-left: auto; }
-  .dine-band { grid-template-columns: 1fr; }
+  .dine-band, .dine-band.flip { grid-template-columns: 1fr; }
+  .dine-band.flip img { order: -1; }
   .dine-copy { padding: 2.2rem 1.6rem; }
   .footer-meta { text-align: left; }
   .hero { min-height: 84vh; }
