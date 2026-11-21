@@ -3,21 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#114B38">
   <meta name="description" content="Lamington Hotel — comfortable rooms, Paia's Restaurant, and conference facilities in Popondetta, Oro Province, Papua New Guinea.">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <title>Lamington Hotel · Popondetta, Papua New Guinea</title>
-  <link rel="stylesheet" href="index.css?v=20261121">
-  <link rel="stylesheet" href="christmas.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@600&family=Poppins:wght@400;500;600&family=Yellowtail&display=swap">
+  <link rel="stylesheet" href="index.css?v=20261121b">
+  <link rel="stylesheet" href="christmas.css?v=20261121b">
 </head>
 <body>
 
 <header class="navbar">
-  <div class="logo">
-    <a href="index.html" class="logo-link">
-      <img src="images/LamingtonLogo-light.png" alt="Lamington Hotel — Popondetta, Oro">
-    </a>
-  </div>
-  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  <a href="index.html" class="logo">
+    <img src="images/LamingtonLogo-header.png" width="304" height="264" alt="Lamington Hotel — Popondetta, Oro">
+  </a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
   <nav>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
@@ -30,164 +34,119 @@
   <a href="reservation.html" class="book-now">Book Now</a>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <p class="eyebrow">Popondetta · Oro Province · Papua New Guinea</p>
-    <h1>Rest beneath <em>Mount Lamington</em></h1>
-    <p class="hero-text">
-      Sixteen comfortable rooms, honest hospitality, and Paia's Restaurant —
-      your home in the heart of Popondetta town.
-    </p>
-    <div class="hero-buttons">
-      <a href="reservation.html" class="primary-btn">Make a Reservation</a>
-      <a href="restaurant.html" class="secondary-btn">Paia's Restaurant</a>
-    </div>
+<div class="hero">
+  <picture>
+    <source media="(max-width: 700px)" srcset="images/hero-garden-960.jpg">
+    <img src="images/hero-garden.jpg" width="1536" height="1024" fetchpriority="high"
+         alt="The garden at Lamington Hotel: a wide lawn shaded by palms and flowering trees, with the hotel buildings on either side">
+  </picture>
+</div>
 
-    <div class="bell-inline">
-      <button class="bell" id="receptionBell" aria-pressed="false" aria-label="Ring the reception bell">
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <ellipse cx="32" cy="52" rx="22" ry="4" fill="#0C1B14" opacity="0.6"/>
-          <rect x="12" y="46" width="40" height="5" rx="2.5" fill="#A8813C"/>
-          <path class="bell-dome" d="M32 14 C18 14 12 28 12 46 L52 46 C52 28 46 14 32 14 Z" fill="url(#brass)"/>
-          <circle class="bell-button" cx="32" cy="11" r="4" fill="#E4CE9C"/>
-          <defs>
-            <linearGradient id="brass" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#E4CE9C"/>
-              <stop offset="0.6" stop-color="#C8A45C"/>
-              <stop offset="1" stop-color="#A8813C"/>
-            </linearGradient>
-          </defs>
-        </svg>
-      </button>
-      <div class="bell-copy">
-        <div class="bell-state" id="bellState">FRONT DESK</div>
-        <div class="bell-hint" id="bellHint">Go on — ring the bell.</div>
+<section class="section on-cream intro">
+  <div class="section-inner intro-inner">
+    <div>
+      <h1>Rest beneath <em>Mount Lamington</em></h1>
+      <p class="lead">
+        Sixteen comfortable rooms, honest hospitality, and Paia's Restaurant —
+        your home in the heart of Popondetta town.
+      </p>
+      <div class="intro-actions">
+        <a href="reservation.html" class="primary-btn">Make a Reservation</a>
+        <a href="restaurant.html" class="secondary-btn">Paia's Restaurant</a>
       </div>
     </div>
-    <div class="hero-facts">
-      <div><strong>16</strong><span>Guest rooms</span></div>
-      <div><strong>K352</strong><span>Rooms from / night</span></div>
-      <div><strong>150</strong><span>Conference seats</span></div>
-      <div><strong>24 / 7</strong><span>Front desk</span></div>
-    </div>
+    <img class="intro-art" src="images/lamington-emblem.jpg" width="828" height="442" loading="lazy" alt="">
   </div>
 </section>
 
-<!-- signature ridgeline -->
-<svg class="ridge" viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true" style="background: var(--forest-950);">
-  <path d="M0 44 L180 44 L300 14 L370 34 L460 6 L560 40 L700 44 L820 22 L900 38 L1040 44 L1200 44" class="line"/>
-  <path d="M0 46 L180 46 L300 16 L370 36 L460 8 L560 42 L700 46 L820 24 L900 40 L1040 46 L1200 46 L1200 56 L0 56 Z" fill="#F4EFE3"/>
-</svg>
-
-<section class="section on-paper">
-  <div class="section-inner">
-    <div class="section-head">
-      <p class="eyebrow">What we offer</p>
-      <h2>Everything a stay in Popondetta needs</h2>
-      <p>Whether you are travelling for business, visiting family, or exploring Oro Province, the essentials are taken care of.</p>
-    </div>
-    <div class="amenities-grid cols-5">
-      <div class="amenity-card">
-        <div class="amenity-glyph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M3 18v2M21 18v2M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/></svg>
-        </div>
-        <h3>Comfortable rooms</h3>
-        <p>Twin shares, deluxe queen twins, and suites — all air-conditioned with fresh linen and a quiet night's sleep guaranteed.</p>
-      </div>
-      <div class="amenity-card">
-        <div class="amenity-glyph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 3v7a2 2 0 0 0 4 0V3M9 3v18M17 3c-1.5 1-2 3-2 5v3h3v10M15 3v5"/></svg>
-        </div>
-        <h3>Paia's Restaurant</h3>
-        <p>A full-service restaurant serving local and international dishes from breakfast through dinner, daily.</p>
-      </div>
-      <div class="amenity-card">
-        <div class="amenity-glyph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 21h8M12 15v6M5 3h14l-6 8v4M5 3l6 8"/></svg>
-        </div>
-        <h3>Saloon bar &amp; pokies</h3>
-        <p>Wind down at our saloon bar with cold drinks and gaming machines for in-house guests. Strictly 18+.</p>
-      </div>
-      <div class="amenity-card">
-        <div class="amenity-glyph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="12" rx="1"/><path d="M8 21h8M12 17v4M7 9h10M7 12h6"/></svg>
-        </div>
-        <h3>Conference facilities</h3>
-        <p>A 150-seat conference room with catering packages — ideal for workshops, trainings, and functions.</p>
-      </div>
-      <div class="amenity-card">
-        <div class="amenity-glyph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 17h16M6 17l2-9h8l2 9M9 8V6a3 3 0 0 1 6 0v2M4 20h16"/></svg>
-        </div>
-        <h3>Guest services</h3>
-        <p>Laundry service, airport and town shuttle, secure parking, and a friendly front desk around the clock.</p>
-      </div>
-    </div>
+<!-- Running strip. The list is repeated so the strip never runs out;
+     screen readers are given the first copy only. -->
+<div class="marquee">
+  <div class="marquee-track">
+    <ul>
+      <li>16 guest rooms</li>
+      <li>Rooms from K352 a night</li>
+      <li>150 conference seats</li>
+      <li>Front desk open 24 / 7</li>
+      <li>Paia's Restaurant, daily 6:00 AM to 9:30 PM</li>
+      <li>Popondetta, Oro Province, Papua New Guinea</li>
+    </ul>
+    <ul aria-hidden="true">
+      <li>16 guest rooms</li>
+      <li>Rooms from K352 a night</li>
+      <li>150 conference seats</li>
+      <li>Front desk open 24 / 7</li>
+      <li>Paia's Restaurant, daily 6:00 AM to 9:30 PM</li>
+      <li>Popondetta, Oro Province, Papua New Guinea</li>
+    </ul>
+    <ul aria-hidden="true">
+      <li>16 guest rooms</li>
+      <li>Rooms from K352 a night</li>
+      <li>150 conference seats</li>
+      <li>Front desk open 24 / 7</li>
+      <li>Paia's Restaurant, daily 6:00 AM to 9:30 PM</li>
+      <li>Popondetta, Oro Province, Papua New Guinea</li>
+    </ul>
+    <ul aria-hidden="true">
+      <li>16 guest rooms</li>
+      <li>Rooms from K352 a night</li>
+      <li>150 conference seats</li>
+      <li>Front desk open 24 / 7</li>
+      <li>Paia's Restaurant, daily 6:00 AM to 9:30 PM</li>
+      <li>Popondetta, Oro Province, Papua New Guinea</li>
+    </ul>
   </div>
-</section>
+</div>
 
-<section class="section on-forest">
+<section class="section on-green">
   <div class="section-inner">
-    <div class="section-head centered" style="text-align:center; margin-inline:auto;">
-      <p class="eyebrow centered">Rooms &amp; rates</p>
+    <div class="section-head centered">
       <h2>Choose your room</h2>
       <p>All rates are per night in PNG Kina, GST inclusive.</p>
     </div>
     <div class="rooms-grid">
       <article class="room-card">
         <div class="room-media">
-          <img src="images/room3.jpg" alt="Standard Twin Share room" loading="lazy">
-          <span class="rate-plate">K352 <small>/ night</small></span>
+          <img src="images/room3.jpg" width="1280" height="960" alt="Standard Twin Share room" loading="lazy">
         </div>
-        <div class="room-body">
-          <p class="room-code">STW</p>
-          <h3>Standard Twin Share</h3>
-          <p>Two comfortable single beds with a workspace and television — a practical choice for colleagues and friends.</p>
-          <a href="reservation.html?room=stw" class="room-link">Book this room</a>
-        </div>
+        <h3>Standard Twin Share</h3>
+        <p class="rate">K352 / night</p>
+        <p>Two comfortable single beds with a workspace and television — a practical choice for colleagues and friends.</p>
+        <a href="reservation.html?room=stw" class="primary-btn">Book this room</a>
       </article>
       <article class="room-card">
         <div class="room-media">
-          <img src="images/room1.jpg" alt="Deluxe Queen Twin room" loading="lazy">
-          <span class="rate-plate">K385 <small>/ night</small></span>
+          <img src="images/room1.jpg" width="1280" height="960" alt="Deluxe Queen Twin room" loading="lazy">
         </div>
-        <div class="room-body">
-          <p class="room-code">DQT</p>
-          <h3>Deluxe Queen Twin</h3>
-          <p>A queen bed and a single in a bright, airy room with garden surroundings — room for a small family.</p>
-          <a href="reservation.html?room=dqt" class="room-link">Book this room</a>
-        </div>
+        <h3>Deluxe Queen Twin</h3>
+        <p class="rate">K385 / night</p>
+        <p>A queen bed and a single in a bright, airy room with garden surroundings — room for a small family.</p>
+        <a href="reservation.html?room=dqt" class="primary-btn">Book this room</a>
       </article>
       <article class="room-card">
         <div class="room-media">
-          <img src="images/room4.jpg" alt="Standard Suite" loading="lazy">
-          <span class="rate-plate">K495 <small>/ night</small></span>
+          <img src="images/room4.jpg" width="1280" height="960" alt="Standard Suite" loading="lazy">
         </div>
-        <div class="room-body">
-          <p class="room-code">SSU</p>
-          <h3>Standard Suite</h3>
-          <p>Our most spacious rooms, with extra living space and a relaxed atmosphere for longer stays.</p>
-          <a href="reservation.html?room=ssu" class="room-link">Book this room</a>
-        </div>
+        <h3>Standard Suite</h3>
+        <p class="rate">K495 / night</p>
+        <p>Our most spacious rooms, with extra living space and a relaxed atmosphere for longer stays.</p>
+        <a href="reservation.html?room=ssu" class="primary-btn">Book this room</a>
       </article>
       <article class="room-card">
         <div class="room-media">
-          <img src="images/vip-suite/lounge-800.jpg" alt="VIP Suite lounge with television, dining table and sofa" loading="lazy">
-          <span class="rate-plate">On request</span>
+          <img src="images/vip-suite/lounge-800.jpg" width="800" height="600" alt="VIP Suite lounge with television, dining table and sofa" loading="lazy">
         </div>
-        <div class="room-body">
-          <p class="room-code">VIP</p>
-          <h3>VIP Suite</h3>
-          <p>A private bedroom, a separate lounge and dining area, and a kitchenette — a suite of its own.</p>
-          <a href="rooms.html#vip-suite" class="room-link">See the suite</a>
-        </div>
+        <h3>VIP Suite</h3>
+        <p class="rate">Rate on request</p>
+        <p>A private bedroom, a separate lounge and dining area, and a kitchenette — a suite of its own.</p>
+        <a href="rooms.html#vip-suite" class="primary-btn">See the suite</a>
       </article>
     </div>
-    <p class="rooms-more"><a href="rooms.html" class="room-link">See every room, with photos</a></p>
+    <p class="section-cta"><a href="rooms.html" class="secondary-btn">See every room, with photos</a></p>
 
-    <div class="stay-calc reveal">
+    <div class="stay-calc">
       <div class="stay-calc-head">
-        <p class="eyebrow">Quick quote</p>
+        <p class="label">Quick quote</p>
         <h3>What will my stay cost?</h3>
       </div>
       <div class="stay-calc-controls">
@@ -200,8 +159,8 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="calcNights">Nights</label>
-          <div class="stepper">
+          <label id="calcNightsLabel">Nights</label>
+          <div class="stepper" role="group" aria-labelledby="calcNightsLabel">
             <button type="button" id="nightsMinus" aria-label="One less night">−</button>
             <span id="calcNightsValue" aria-live="polite">2</span>
             <button type="button" id="nightsPlus" aria-label="One more night">+</button>
@@ -214,36 +173,54 @@
         <a href="reservation.html" class="primary-btn" id="calcBook">Book this stay</a>
       </div>
     </div>
-
   </div>
 </section>
 
-<section class="section on-paper">
+<section class="section on-cream">
   <div class="section-inner">
-    <div class="section-head">
-      <p class="eyebrow">Guest services</p>
-      <h2>Laundry &amp; vehicle services</h2>
-      <p>Little conveniences that make a stay easy — just ask at the front desk and we'll arrange it, charged straight to your room.</p>
-    </div>
-    <div class="amenities-grid">
-      <div class="amenity-card">
-        <div class="amenity-glyph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="13" r="5"/><path d="M9 13a3 3 0 0 0 6 0M7 6h.01M10 6h.01"/></svg>
+    <div class="offer">
+      <div class="section-head">
+        <h2>Everything a stay in Popondetta needs</h2>
+        <p>Whether you are travelling for business, visiting family, or exploring Oro Province, the essentials are taken care of.</p>
+      </div>
+      <dl class="offer-list">
+        <div>
+          <dt>Comfortable rooms</dt>
+          <dd>Twin shares, deluxe queen twins, and suites — all air-conditioned with fresh linen and a quiet night's sleep guaranteed.</dd>
         </div>
+        <div>
+          <dt>Paia's Restaurant</dt>
+          <dd>A full-service restaurant serving local and international dishes from breakfast through dinner, daily.</dd>
+        </div>
+        <div>
+          <dt>Saloon bar &amp; pokies</dt>
+          <dd>Wind down at our saloon bar with cold drinks and gaming machines for in-house guests. Strictly 18+.</dd>
+        </div>
+        <div>
+          <dt>Conference facilities</dt>
+          <dd>A 150-seat conference room with catering packages — ideal for workshops, trainings, and functions.</dd>
+        </div>
+        <div>
+          <dt>Guest services</dt>
+          <dd>Laundry service, airport and town shuttle, secure parking, and a friendly front desk around the clock.</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="services">
+      <div class="section-head">
+        <h2>Laundry &amp; vehicle services</h2>
+        <p>Little conveniences that make a stay easy — just ask at the front desk and we'll arrange it, charged straight to your room.</p>
+      </div>
+      <div>
         <h3>Laundry service</h3>
         <p>Same-day washing, drying and pressing with per-item pricing. Drop your laundry at the front desk before 9am and it's back the same evening.</p>
       </div>
-      <div class="amenity-card">
-        <div class="amenity-glyph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 15l1.5-6A2 2 0 0 1 6.4 7.5h11.2a2 2 0 0 1 1.9 1.5L21 15M3 15v4h2.5M21 15v4h-2.5M5.5 19h13"/><circle cx="7.5" cy="17.5" r="1.6"/><circle cx="16.5" cy="17.5" r="1.6"/></svg>
-        </div>
+      <div>
         <h3>Airport &amp; town shuttle</h3>
         <p>Scheduled pick-ups and drop-offs for Girua Airport and Popondetta town. Book your shuttle at check-in or the day before travel.</p>
       </div>
-      <div class="amenity-card">
-        <div class="amenity-glyph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-        </div>
+      <div>
         <h3>Charters &amp; day trips</h3>
         <p>Need a vehicle for meetings, site visits, or a run out to the province? Talk to the front desk about charter transport arrangements.</p>
       </div>
@@ -251,39 +228,69 @@
   </div>
 </section>
 
-<section class="section on-paper" style="padding-top:0;">
-  <div class="dine-band flip">
-    <div class="dine-copy">
-      <p class="eyebrow">Meetings &amp; functions</p>
-      <h2>Conference Room</h2>
-      <p>Seats up to 150 guests, with optional catering packages from Paia's Restaurant — a ready venue for workshops, trainings and functions. K600 per day.</p>
-      <a href="rooms.html#conference-room" class="primary-btn">See the room</a>
-    </div>
-    <img src="images/conference/overview-800.jpg" alt="Conference room set with rows of clothed tables and chairs facing a screen and the Welcome to Oro mural" loading="lazy">
+<section class="split on-green">
+  <div class="split-photo">
+    <img src="images/conference/overview-800.jpg"
+         srcset="images/conference/overview-800.jpg 800w, images/conference/overview.jpg 1200w"
+         sizes="(max-width: 980px) 100vw, 50vw" width="1200" height="900" loading="lazy"
+         alt="Conference room set with rows of clothed tables and chairs facing a screen and the Welcome to Oro mural">
   </div>
-  <div class="dine-band">
-    <img src="images/1.png" alt="Paia's Restaurant menu cover" loading="lazy">
-    <div class="dine-copy">
-      <p class="eyebrow">Dining</p>
+  <div class="split-copy">
+    <h2>Conference Room</h2>
+    <p>Seats up to 150 guests, with optional catering packages from Paia's Restaurant — a ready venue for workshops, trainings and functions. K600 per day.</p>
+    <a href="rooms.html#conference-room" class="primary-btn">See the room</a>
+  </div>
+</section>
+
+<section class="section on-cream">
+  <div class="section-inner">
+    <div class="section-head centered">
       <h2>Paia's Restaurant</h2>
       <p>Breakfast, burgers, pizzas, grills and classics, plus café drinks, combos and group meals — served daily from 6:00&nbsp;AM to 9:30&nbsp;PM, for guests and the Popondetta community alike.</p>
-      <a href="restaurant.html" class="primary-btn">View the menus</a>
     </div>
+    <div class="tiles">
+      <a href="restaurant.html" class="tile">
+        <img src="images/menu/cafe-menu-400.jpg" width="400" height="566" loading="lazy" alt="">
+        <span>Café</span>
+      </a>
+      <a href="restaurant.html" class="tile">
+        <img src="images/menu/combo-meals-400.jpg" width="400" height="566" loading="lazy" alt="">
+        <span>Combo meals</span>
+      </a>
+      <a href="restaurant.html" class="tile">
+        <img src="images/menu/group-meals-400.jpg" width="400" height="566" loading="lazy" alt="">
+        <span>Group meals</span>
+      </a>
+      <a href="restaurant.html" class="tile">
+        <img src="images/menu/buffet-events-menu-400.jpg" width="400" height="566" loading="lazy" alt="">
+        <span>Buffet &amp; events</span>
+      </a>
+    </div>
+    <p class="section-cta"><a href="restaurant.html" class="primary-btn">View the menus</a></p>
   </div>
 </section>
 
 <footer class="footer">
   <div class="footer-inner">
-    <img src="images/LamingtonLogo-light.png" alt="Lamington Hotel — Popondetta, Oro">
-    <div class="footer-meta">
-      P.O. Box 27, Popondetta, Oro Province, Papua New Guinea<br>
-      <a href="mailto:reservations@lamingtonhotel.com.pg">reservations@lamingtonhotel.com.pg</a>
+    <img src="images/LamingtonLogo-header.png" width="304" height="264" loading="lazy" alt="Lamington Hotel — Popondetta, Oro">
+    <div>
+      <h3>Address</h3>
+      <p>P.O. Box 27, Popondetta<br>Oro Province, Papua New Guinea</p>
+    </div>
+    <div>
+      <h3>Opening hours</h3>
+      <p>Front desk: 24 hours, every day<br>Paia's Restaurant: 6:00&nbsp;AM to 9:30&nbsp;PM, daily</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p><a href="tel:+6756297222">(675) 629 7222</a> / <a href="tel:+6756297223">629 7223</a><br>
+         <a href="mailto:reservations@lamingtonhotel.com.pg">reservations@lamingtonhotel.com.pg</a></p>
     </div>
   </div>
   <p class="footer-copy">© 2026 Lamington Hotel · All rights reserved</p>
 </footer>
 
-<script src="script.js?v=20261121"></script>
-<script src="christmas.js?v=20261121"></script>
+<script src="script.js?v=20261121b"></script>
+<script src="christmas.js?v=20261121b"></script>
 </body>
 </html>

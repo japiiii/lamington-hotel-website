@@ -5,58 +5,56 @@
    adds the class "xmas" to <html> while the season is on, and
    every rule here hangs off that class or off an element that
    christmas.js creates. Outside the season the site looks
-   exactly as it did before.
+   exactly as it does without it.
 
    Adds one colour to the palette — a deep Christmas red, which
-   sits naturally beside the rainforest green and brass gold.
+   sits naturally beside the green and amber.
    ============================================================ */
 
 html.xmas {
   --xmas-red: #A3212B;
-  --xmas-red-deep: #6E151B;
-  --xmas-green: #2F6B47;
 }
 
-/* ---------- Greeting ribbon (above the navbar) ---------- */
+/* ---------- Greeting ribbon (above the header) ---------- */
 .xmas-ribbon {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.2rem 0.85rem;
-  padding: 0.5rem 4vw;
-  background: linear-gradient(90deg, var(--xmas-red-deep), var(--xmas-red) 50%, var(--xmas-red-deep));
-  border-bottom: 1px solid rgba(228, 206, 156, 0.4);
-  color: #F8EDD3;
-  font-size: 0.74rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
+  gap: 0 0.9rem;
+  padding: 0.4rem 4vw;
+  background: var(--xmas-red);
+  color: var(--cream);
+  font-family: var(--heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   text-align: center;
 }
 .xmas-ribbon strong {
-  font-family: var(--display);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 1.08rem;
-  letter-spacing: 0.02em;
+  font-family: var(--script);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  letter-spacing: 0;
   text-transform: none;
-  color: var(--gold-light);
+  color: var(--amber-light);
 }
 .xmas-ribbon svg {
-  width: 11px;
-  height: 11px;
+  width: 12px;
+  height: 12px;
   flex: none;
-  fill: var(--gold);
+  fill: var(--amber-light);
 }
 
-/* ---------- String of lights (hangs from the navbar) ---------- */
+/* ---------- String of lights (hangs from the header) ---------- */
 .xmas-lights {
   position: absolute;
   left: 0;
   right: 0;
   top: 100%;
-  height: 46px;
+  height: 50px;
   pointer-events: none;
 }
 .xmas-lights svg {
@@ -67,118 +65,39 @@ html.xmas {
 }
 .xmas-wire {
   fill: none;
-  stroke: #4A4026;
-  stroke-width: 1.2;
+  stroke: #0C3A2B;
+  stroke-width: 2;
 }
 .xmas-bulb .halo {
   opacity: 0.6;
   animation: xmas-twinkle var(--t, 3.2s) ease-in-out var(--d, 0s) infinite;
 }
-.xmas-bulb .glass {
-  animation: xmas-glass var(--t, 3.2s) ease-in-out var(--d, 0s) infinite;
-}
 @keyframes xmas-twinkle {
-  0%, 100% { opacity: 0.22; }
-  50% { opacity: 0.9; }
-}
-@keyframes xmas-glass {
-  0%, 100% { opacity: 0.78; }
-  50% { opacity: 1; }
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.95; }
 }
 
-/* Bell rung: the lights run brighter, in a chase along the wire */
-html.xmas-lit .xmas-bulb .halo {
-  animation: xmas-chase 1.2s ease-in-out var(--c, 0s) infinite;
+/* ---------- Home page headline ---------- */
+/* a size down, so "Christmas beneath" stays on one line */
+html.xmas .intro h1 { font-size: clamp(2rem, 4.5vw, 3.6rem); }
+@media (max-width: 980px) {
+  html.xmas .intro h1 { font-size: min(8.2vw, 3.6rem); }
 }
-html.xmas-lit .xmas-bulb .glass {
-  animation: none;
-  opacity: 1;
-}
-@keyframes xmas-chase {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-
-/* ---------- Falling lights (a canvas inside each hero) ---------- */
-.xmas-glints {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-}
-html.xmas .hero-content {
-  position: relative;
-  z-index: 1;
-}
-html.xmas .page-hero {
-  position: relative;
-  overflow: hidden;
-}
-html.xmas .page-hero > :not(.xmas-glints) {
-  position: relative;
-  z-index: 1;
-}
-
-/* ---------- Home hero ---------- */
-html.xmas .hero h1 { max-width: 16ch; }
-
-/* The Christmas star, resting above the summit of the ridgeline */
-.xmas-star {
-  position: absolute;
-  left: 38.333%;              /* the summit sits at x=460 of the 1200-wide ridge */
-  bottom: 0;
-  width: 34px;
-  height: 48px;
-  transform: translateX(-50%);
-  pointer-events: none;
-  z-index: 2;
-}
-.xmas-star svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  transform-origin: 50% 50%;
-  animation: xmas-star 3.6s ease-in-out infinite;
-}
-@keyframes xmas-star {
-  0%, 100% { opacity: 0.78; transform: scale(0.9); }
-  50% { opacity: 1; transform: scale(1.06); }
-}
-.hero.lit .xmas-star svg { filter: drop-shadow(0 0 8px rgba(255, 236, 190, 0.9)); }
 
 /* ---------- Festive band (home page, just above the rooms) ---------- */
 .xmas-band {
   position: relative;
   overflow: hidden;
-  padding: 4.6rem 4vw;
-  background:
-    radial-gradient(ellipse at 88% -10%, rgba(214, 74, 62, 0.42), transparent 58%),
-    linear-gradient(135deg, #5B0F15 0%, #86181F 55%, #651117 100%);
-  border-top: 1px solid var(--gold-deep);
-  border-bottom: 1px solid var(--gold-deep);
-  color: var(--paper);
-}
-.xmas-band::before {          /* a quiet scatter of stars */
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='180'%3E%3Cg fill='%23E4CE9C'%3E%3Cpath d='M30 22c.4 4.2 1.8 5.6 6 6-4.2.4-5.6 1.8-6 6-.4-4.2-1.8-5.6-6-6 4.2-.4 5.6-1.8 6-6z' opacity='.5'/%3E%3Cpath d='M150 96c.3 3 1.3 4 4.3 4.3-3 .3-4 1.3-4.3 4.3-.3-3-1.3-4-4.3-4.3 3-.3 4-1.3 4.3-4.3z' opacity='.35'/%3E%3Ccircle cx='96' cy='48' r='1.1' opacity='.4'/%3E%3Ccircle cx='196' cy='30' r='.9' opacity='.3'/%3E%3Ccircle cx='60' cy='128' r='1.2' opacity='.35'/%3E%3Ccircle cx='182' cy='152' r='.9' opacity='.3'/%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.55;
-  pointer-events: none;
+  padding: 4.8rem 4vw;
+  background: var(--xmas-red);
+  border-top: 4px solid var(--amber);
+  color: var(--cream);
 }
 .xmas-band-inner {
-  position: relative;
   max-width: var(--wrap);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 620px) minmax(220px, 350px);
+  grid-template-columns: minmax(0, 680px) minmax(220px, 340px);
   justify-content: space-between;
   column-gap: 2.5rem;
 }
@@ -186,74 +105,48 @@ html.xmas .hero h1 { max-width: 16ch; }
   grid-column: 1;
   grid-row: 1;
 }
-.xmas-band .eyebrow { color: var(--gold-light); }
-.xmas-band .eyebrow::before { background: var(--gold-light); }
-.xmas-band h2 {
-  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
-  color: #FBF7EC;
-  margin-top: 0.9rem;
-}
-.xmas-band h2 em {
-  font-style: italic;
-  font-weight: 400;
-  color: var(--gold-light);
-}
-.xmas-band-text {
-  margin-top: 0.9rem;
-  color: rgba(248, 240, 226, 0.88);
-}
+.xmas-band .label { color: var(--amber-light); }
+.xmas-band h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); }
+.xmas-band h2 em { color: var(--amber-light); }
+.xmas-band-text { margin-top: 1rem; }
 .xmas-band-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
 }
+.xmas-band .secondary-btn { border-color: var(--cream); color: var(--cream); }
+.xmas-band .secondary-btn:hover { background: var(--cream); color: var(--xmas-red); }
 .xmas-baubles {
   grid-column: 2;
   grid-row: 1;
   align-self: start;
   width: 100%;
   height: auto;
-  margin-top: -4.6rem;        /* hang from the very top edge of the band */
+  margin-top: -4.8rem;        /* hang from the very top edge of the band */
   pointer-events: none;
 }
 
-/* ---------- Touches of red and green on the cards ---------- */
-html.xmas .amenity-card:nth-child(3n+1) { border-top-color: var(--xmas-red); }
-html.xmas .amenity-card:nth-child(3n+1) .amenity-glyph { color: var(--xmas-red); }
-html.xmas .amenity-card:nth-child(3n) { border-top-color: var(--xmas-green); }
-html.xmas .amenity-card:nth-child(3n) .amenity-glyph { color: var(--xmas-green); }
-html.xmas .info-box:nth-child(3n+1) { border-left-color: var(--xmas-red); }
-html.xmas .info-box:nth-child(3n) { border-left-color: var(--xmas-green); }
-
 /* ---------- Footer greeting ---------- */
-.xmas-footer-note {
+.footer .xmas-footer-note {
   max-width: var(--wrap);
   margin: 2.4rem auto 0;
-  padding-top: 1.8rem;
-  border-top: 1px solid var(--forest-line);
-  font-family: var(--display);
-  font-style: italic;
-  font-size: 1.15rem;
-  color: var(--gold-light);
-  text-align: center;
+  font-family: var(--script);
+  font-size: 1.7rem;
+  line-height: 1.25;
+  color: var(--amber-light);
 }
-html.xmas .footer-copy {
-  margin-top: 1.4rem;
-  padding-top: 0;
-  border-top: none;
-  text-align: center;
-}
+html.xmas .footer .footer-copy { margin-top: 0.7rem; }
 
 /* ---------- Small screens ---------- */
-@media (max-width: 860px) {
-  .xmas-ribbon { font-size: 0.66rem; letter-spacing: 0.16em; }
-  .xmas-band { padding: 3.6rem 4vw; }
+@media (max-width: 980px) {
+  .xmas-band { padding: 3.8rem 5vw; }
   .xmas-band-inner { display: block; }
   .xmas-baubles { display: none; }
 }
 @media (max-width: 600px) {
+  .xmas-ribbon { font-size: 0.82rem; }
+  .xmas-ribbon strong { font-size: 1.45rem; }
   .xmas-ribbon svg { display: none; }
-  /* keep "Christmas beneath" on one line and "Mount Lamington" on the next */
-  html.xmas .hero h1 { font-size: min(2.6rem, 10.4vw); }
+  .footer .xmas-footer-note { font-size: 1.5rem; }
 }

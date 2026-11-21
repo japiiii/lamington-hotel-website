@@ -132,82 +132,12 @@ function showNote(el, text) {
   el.classList.add('show');
 }
 
-/* ============================================================
-   Interactive layer
-   ============================================================ */
-
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* Scroll reveals — auto-tag cards and section heads */
-document.querySelectorAll(
-  '.amenity-card, .room-card, .room-feature, .menu-card, .info-box, .section-head, .dine-band, .reservation-form, .contact-form, .reservation-aside'
-).forEach(el => el.classList.add('reveal'));
-
-if (prefersReducedMotion) {
-  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
-} else {
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-}
-
-/* Reception bell — ring to wake the hotel */
-const bell = document.getElementById('receptionBell');
-if (bell) {
-  const hero = document.querySelector('.hero');
-  const ridge = document.querySelector('.ridge');
-  const bellState = document.getElementById('bellState');
-  const bellHint = document.getElementById('bellHint');
-  let audioCtx = null;
-
-  function ding() {
-    try {
-      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
-      const now = audioCtx.currentTime;
-      [1318.5, 1975.5].forEach((freq, i) => {
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = 'sine';
-        osc.frequency.value = freq;
-        gain.gain.setValueAtTime(0.0001, now);
-        gain.gain.exponentialRampToValueAtTime(i ? 0.12 : 0.22, now + 0.012);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.6);
-        osc.connect(gain).connect(audioCtx.destination);
-        osc.start(now);
-        osc.stop(now + 1.7);
-      });
-    } catch (e) { /* audio unavailable — the visual still plays */ }
-  }
-
-  bell.addEventListener('click', () => {
-    ding();
-    bell.classList.remove('ringing');
-    void bell.offsetWidth; /* restart the swing */
-    if (!prefersReducedMotion) bell.classList.add('ringing');
-
-    const lit = hero.classList.toggle('lit');
-    if (ridge) ridge.classList.toggle('lit', lit);
-    bell.setAttribute('aria-pressed', lit ? 'true' : 'false');
-    bellState.textContent = lit ? 'AT YOUR SERVICE' : 'FRONT DESK';
-    bellHint.textContent = lit ? 'Someone is on the way. Welcome in.' : 'Go on — ring the bell.';
-  });
-}
-
-/* Gentle hero parallax */
-const heroEl = document.querySelector('.hero');
-if (heroEl && !prefersReducedMotion) {
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y < window.innerHeight) {
-      heroEl.style.backgroundPosition = 'center calc(30% + ' + (y * 0.12) + 'px)';
-    }
-  }, { passive: true });
+/* Running strip — hovering pauses it; so does a tap or a click */
+const marquee = document.querySelector('.marquee');
+if (marquee) {
+  marquee.addEventListener('click', () => marquee.classList.toggle('paused'));
 }
 
 /* Photo galleries — swipe, use the arrows, or pick a thumbnail */

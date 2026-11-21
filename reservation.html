@@ -3,21 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#114B38">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <title>Reservation · Lamington Hotel</title>
-  <link rel="stylesheet" href="index.css?v=20261121">
-  <link rel="stylesheet" href="reservation.css">
-  <link rel="stylesheet" href="christmas.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@600&family=Poppins:wght@400;500;600&family=Yellowtail&display=swap">
+  <link rel="stylesheet" href="index.css?v=20261121b">
+  <link rel="stylesheet" href="reservation.css?v=20261121b">
+  <link rel="stylesheet" href="christmas.css?v=20261121b">
 </head>
 <body>
 
 <header class="navbar">
-  <div class="logo">
-    <a href="index.html" class="logo-link">
-      <img src="images/LamingtonLogo-light.png" alt="Lamington Hotel — Popondetta, Oro">
-    </a>
-  </div>
-  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  <a href="index.html" class="logo">
+    <img src="images/LamingtonLogo-header.png" width="304" height="264" alt="Lamington Hotel — Popondetta, Oro">
+  </a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
   <nav>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -30,86 +34,101 @@
   <a href="reservation.html" class="book-now">Book Now</a>
 </header>
 
-<section class="page-hero">
-  <p class="eyebrow centered">Plan your stay</p>
-  <h1>Make a Reservation</h1>
-  <p>Book directly with us for our best available rate. Send a request below and our front desk will confirm your room by email or phone.</p>
-</section>
+<div class="page-hero">
+  <picture>
+    <source media="(max-width: 700px)" srcset="images/hero-garden-960.jpg">
+    <img src="images/hero-garden.jpg" width="1536" height="1024" alt="The garden at Lamington Hotel">
+  </picture>
+</div>
 
-<section class="section on-paper">
-  <div class="section-inner reservation-layout">
+<section class="section on-cream">
+  <div class="section-inner">
+    <div class="section-head">
+      <h1>Make a Reservation</h1>
+      <p>Book directly with us for our best available rate. Send a request below and our front desk will confirm your room by email or phone.</p>
+    </div>
 
-    <form class="reservation-form" action="mail-handler.php" method="POST" novalidate>
-      <input type="hidden" name="form_type" value="reservation">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="guestName">Full name</label>
-          <input type="text" id="guestName" name="name" placeholder="Your name" required>
+    <div class="reservation-layout">
+      <form class="reservation-form" action="mail-handler.php" method="POST" novalidate>
+        <input type="hidden" name="form_type" value="reservation">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="guestName">Full name</label>
+            <input type="text" id="guestName" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="reservationEmail">Email address</label>
+            <input type="email" id="reservationEmail" name="email" placeholder="your@email.com" required>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="reservationEmail">Email address</label>
-          <input type="email" id="reservationEmail" name="email" placeholder="your@email.com" required>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="checkIn">Check in</label>
+            <input type="date" id="checkIn" name="checkIn" required>
+          </div>
+          <div class="form-group">
+            <label for="checkOut">Check out</label>
+            <input type="date" id="checkOut" name="checkOut" required>
+          </div>
         </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="checkIn">Check in</label>
-          <input type="date" id="checkIn" name="checkIn" required>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="roomType">Room type</label>
+            <select id="roomType" name="roomType">
+              <option value="Standard Twin Share (K352/night)" data-room="stw">Standard Twin Share · K352 / night</option>
+              <option value="Deluxe Queen Twin (K385/night)" data-room="dqt">Deluxe Queen Twin · K385 / night</option>
+              <option value="Standard Suite (K495/night)" data-room="ssu">Standard Suite · K495 / night</option>
+              <option value="VIP Suite (rate on request)" data-room="vip">VIP Suite · rate on request</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="guestCount">Guests</label>
+            <select id="guestCount" name="guests">
+              <option>1 guest</option>
+              <option>2 guests</option>
+              <option>3 guests</option>
+              <option>4 guests</option>
+            </select>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="checkOut">Check out</label>
-          <input type="date" id="checkOut" name="checkOut" required>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="roomType">Room type</label>
-          <select id="roomType" name="roomType">
-            <option value="Standard Twin Share (K352/night)" data-room="stw">Standard Twin Share · K352 / night</option>
-            <option value="Deluxe Queen Twin (K385/night)" data-room="dqt">Deluxe Queen Twin · K385 / night</option>
-            <option value="Standard Suite (K495/night)" data-room="ssu">Standard Suite · K495 / night</option>
-            <option value="VIP Suite (rate on request)" data-room="vip">VIP Suite · rate on request</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="guestCount">Guests</label>
-          <select id="guestCount" name="guests">
-            <option>1 guest</option>
-            <option>2 guests</option>
-            <option>3 guests</option>
-            <option>4 guests</option>
-          </select>
-        </div>
-      </div>
-      <button type="submit" class="form-submit">Send booking request</button>
-      <p class="form-note" id="reservationNote"></p>
-    </form>
+        <button type="submit" class="form-submit">Send booking request</button>
+        <p class="form-note" id="reservationNote"></p>
+      </form>
 
-    <aside class="reservation-aside">
-      <h3>Good to know</h3>
-      <ul>
-        <li>All rates are in PNG Kina and include 10% GST.</li>
-        <li>Advance deposits are welcome and credited to your stay.</li>
-        <li>Group and conference bookings — <a href="contact.html">contact us directly</a>.</li>
-        <li>Need help? Email <a href="mailto:reservations@lamingtonhotel.com.pg">reservations@lamingtonhotel.com.pg</a>.</li>
-      </ul>
-    </aside>
-
+      <aside class="reservation-aside on-green">
+        <h2>Good to know</h2>
+        <ul>
+          <li>All rates are in PNG Kina and include 10% GST.</li>
+          <li>Advance deposits are welcome and credited to your stay.</li>
+          <li>Group and conference bookings — <a href="contact.html">contact us directly</a>.</li>
+          <li>Need help? Email <a href="mailto:reservations@lamingtonhotel.com.pg">reservations@lamingtonhotel.com.pg</a>.</li>
+        </ul>
+      </aside>
+    </div>
   </div>
 </section>
 
 <footer class="footer">
   <div class="footer-inner">
-    <img src="images/LamingtonLogo-light.png" alt="Lamington Hotel — Popondetta, Oro">
-    <div class="footer-meta">
-      P.O. Box 27, Popondetta, Oro Province, Papua New Guinea<br>
-      <a href="mailto:reservations@lamingtonhotel.com.pg">reservations@lamingtonhotel.com.pg</a>
+    <img src="images/LamingtonLogo-header.png" width="304" height="264" loading="lazy" alt="Lamington Hotel — Popondetta, Oro">
+    <div>
+      <h3>Address</h3>
+      <p>P.O. Box 27, Popondetta<br>Oro Province, Papua New Guinea</p>
+    </div>
+    <div>
+      <h3>Opening hours</h3>
+      <p>Front desk: 24 hours, every day<br>Paia's Restaurant: 6:00&nbsp;AM to 9:30&nbsp;PM, daily</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p><a href="tel:+6756297222">(675) 629 7222</a> / <a href="tel:+6756297223">629 7223</a><br>
+         <a href="mailto:reservations@lamingtonhotel.com.pg">reservations@lamingtonhotel.com.pg</a></p>
     </div>
   </div>
   <p class="footer-copy">© 2026 Lamington Hotel · All rights reserved</p>
 </footer>
 
-<script src="script.js?v=20261121"></script>
-<script src="christmas.js?v=20261121"></script>
+<script src="script.js?v=20261121b"></script>
+<script src="christmas.js?v=20261121b"></script>
 </body>
 </html>

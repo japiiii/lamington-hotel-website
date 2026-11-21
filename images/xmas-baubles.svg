@@ -1,57 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 236" width="300" height="236">
-  <!-- Lamington Hotel — Christmas baubles for the festive band.
-       The gold one wears the Mount Lamington ridgeline. -->
+  <!-- Lamington Hotel — Christmas baubles for the festive band, in the
+       site's own amber, green and cream. The amber one wears the
+       outline of Mount Lamington. -->
   <defs>
-    <radialGradient id="gold" cx="0.36" cy="0.3" r="0.8">
-      <stop offset="0" stop-color="#F3E3B9"/>
-      <stop offset="0.55" stop-color="#C8A45C"/>
-      <stop offset="1" stop-color="#8F6B2B"/>
-    </radialGradient>
-    <radialGradient id="green" cx="0.36" cy="0.3" r="0.8">
-      <stop offset="0" stop-color="#3F8259"/>
-      <stop offset="0.55" stop-color="#1E4A33"/>
-      <stop offset="1" stop-color="#0F281C"/>
-    </radialGradient>
-    <radialGradient id="cream" cx="0.36" cy="0.3" r="0.8">
-      <stop offset="0" stop-color="#FFFDF6"/>
-      <stop offset="0.6" stop-color="#F0E7D2"/>
-      <stop offset="1" stop-color="#CDBF9F"/>
-    </radialGradient>
-    <clipPath id="clip-gold"><circle cx="62" cy="138" r="34"/></clipPath>
+    <clipPath id="clip-amber"><circle cx="62" cy="138" r="34"/></clipPath>
     <clipPath id="clip-green"><circle cx="158" cy="180" r="40"/></clipPath>
   </defs>
 
   <!-- strings -->
-  <path d="M62 0V94M158 0V130M242 0V56" fill="none" stroke="#E4CE9C" stroke-opacity="0.75"/>
+  <path d="M62 0V94M158 0V130M242 0V56" fill="none" stroke="#F5E6C5" stroke-width="2"/>
 
-  <!-- gold bauble -->
-  <rect x="55" y="94" width="14" height="10" rx="2" fill="#8F6B2B"/>
-  <circle cx="62" cy="138" r="34" fill="url(#gold)"/>
-  <g clip-path="url(#clip-gold)" fill="none" stroke="#10231B" stroke-width="1.6" stroke-linejoin="round">
-    <path d="M26 148H38L45 132L49 142L54 127L60 145L68 148L74 136L79 144L87 148H98"/>
-    <path d="M26 154H98" stroke-opacity="0.45"/>
+  <!-- amber bauble -->
+  <rect x="54" y="92" width="16" height="13" rx="2" fill="#C37F28"/>
+  <circle cx="62" cy="138" r="34" fill="#E6AA4E"/>
+  <g clip-path="url(#clip-amber)" fill="none" stroke="#114B38" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M24 150H39L46 132L50 142L55 127L61 146L69 150L75 137L80 145L87 150H100"/>
   </g>
 
   <!-- green bauble -->
-  <rect x="150" y="130" width="16" height="11" rx="2" fill="#8F6B2B"/>
-  <circle cx="158" cy="180" r="40" fill="url(#green)"/>
-  <g clip-path="url(#clip-green)" fill="none" stroke="#E4CE9C" stroke-width="1.5">
-    <path d="M114 168Q158 184 202 168M114 190Q158 206 202 190"/>
+  <rect x="149" y="128" width="18" height="14" rx="2" fill="#C37F28"/>
+  <circle cx="158" cy="180" r="40" fill="#114B38"/>
+  <g clip-path="url(#clip-green)" fill="none" stroke="#F5E6C5" stroke-width="2.2">
+    <path d="M114 166Q158 184 202 166M114 192Q158 210 202 192"/>
   </g>
-  <g fill="#E4CE9C">
-    <circle cx="134" cy="184" r="1.8"/>
-    <circle cx="146" cy="187" r="1.8"/>
-    <circle cx="158" cy="188" r="1.8"/>
-    <circle cx="170" cy="187" r="1.8"/>
-    <circle cx="182" cy="184" r="1.8"/>
+  <g fill="#E6AA4E">
+    <circle cx="132" cy="185" r="2.6"/>
+    <circle cx="145" cy="188.5" r="2.6"/>
+    <circle cx="158" cy="189.5" r="2.6"/>
+    <circle cx="171" cy="188.5" r="2.6"/>
+    <circle cx="184" cy="185" r="2.6"/>
   </g>
 
   <!-- cream bauble -->
-  <rect x="236" y="56" width="12" height="9" rx="2" fill="#8F6B2B"/>
-  <circle cx="242" cy="91" r="27" fill="url(#cream)"/>
-  <path d="M242 79C242.6 87 245 90.4 254 91C245 91.6 242.6 95 242 103C241.4 95 239 91.6 230 91C239 90.4 241.4 87 242 79Z" fill="#A3212B"/>
-
-  <!-- highlights -->
-  <path d="M40 126A26 26 0 0 1 54 112M128 166A31 31 0 0 1 145 149M224 82A20 20 0 0 1 234 72"
-        fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-opacity="0.4"/>
+  <rect x="235" y="54" width="14" height="12" rx="2" fill="#C37F28"/>
+  <circle cx="242" cy="91" r="27" fill="#F5E6C5"/>
+  <path d="M242 77C242.7 86.5 246 90.3 256 91C246 91.7 242.7 95.5 242 105C241.3 95.5 238 91.7 228 91C238 90.3 241.3 86.5 242 77Z" fill="#A3212B"/>
 </svg>
